@@ -5,6 +5,7 @@ import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactModal } from './components/ContactModal';
+import { CoreAttribution } from './components/CoreAttribution';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Info, Heart, ArrowUp } from 'lucide-react';
 
@@ -81,6 +82,10 @@ export default function App() {
             © {new Date().getFullYear()} Jack. All Rights Reserved. Crafted with Passion.
           </p>
         </div>
+        
+        {/* Core Attribution */}
+        <CoreAttribution variant="footer" />
+
         <div className="flex items-center gap-6 text-sm text-[#D7E2EA]/60 uppercase tracking-widest font-mono text-xs">
           <span className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer" onClick={() => setIsContactOpen(true)}>
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block" />
@@ -92,6 +97,9 @@ export default function App() {
           </span>
         </div>
       </footer>
+
+      {/* Core Attribution - Floating on Desktop */}
+      <CoreAttribution variant="floating" />
 
       {/* Contact Form Modal Overlay */}
       <ContactModal 
